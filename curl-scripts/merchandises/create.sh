@@ -6,8 +6,17 @@ curl "http://localhost:4741/merchandises" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "example": {
-      "text": "'"${TEXT}"'"
+    "merchandise": {
+      "name": "'"${NAME}"'",
+      "description": "'"${DESCRIPTION}"'",
+      "department": "'"${DEPARTMENT}"'",
+      "vendor": "'"${VENDOR}"'",
+      "tax": "'"${TAX}"'",
+      "cost": "'"${COST}"'",
+      "retail": "'"${RETAIL}"'",
+      "quantity": "'"${QUANTITY}"'",
+      "barcode": "'"${BARCODE}"'",
+      "category": "'"${CATEGORY}"'"
     }
   }'
 
