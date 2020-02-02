@@ -2,7 +2,8 @@
 
 class Merchandise < ApplicationRecord
   belongs_to :user, optional: true
-  validates  :name, :description, :department,
-             :vendor, :tax, :cost, :retail,
-             :quantity, :barcode, :category, presence: true
+  validates  :name, :barcode, :tax, :retail, :quantity, presence: true
+  validates  :description, :department,
+             :vendor, :cost,
+             :category, presence: true, allow_blank: true
 end
