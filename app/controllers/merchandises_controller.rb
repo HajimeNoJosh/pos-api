@@ -7,7 +7,16 @@ class MerchandisesController < ApplicationController
   def index
     @merchandises = Merchandise.all
 
-    render json: @merchandises
+    if params.key?(:name)
+      results = @merchandises.filter { |x| x.name.downcase.include? params[:name].downcase }
+      if results.any?
+        render json: results
+      else
+        render json: {}
+      end
+    else
+      render json: @merchandises
+    end
   end
 
   # GET /merchandises/1
